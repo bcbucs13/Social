@@ -98,7 +98,6 @@
 			isa = PBXGroup;
 			children = (
 				CED46E671E1C9519007315E3 /* AppDelegate.swift */,
-				CED46E6B1E1C9519007315E3 /* Main.storyboard */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -106,6 +105,7 @@
 		CED46E7F1E21689D007315E3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				CED46E6B1E1C9519007315E3 /* Main.storyboard */,
 			);
 			name = View;
 			sourceTree = "<group>";
