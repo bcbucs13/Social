@@ -64,6 +64,9 @@
                                 <state key="normal" image="f">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iql-Zi-eMc"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="SeM-9N-c3k">
                                 <subviews>
@@ -75,7 +78,7 @@
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HGv-7m-14s" customClass="AdvancedField" customModule="devlopes_social" customModuleProvider="target">
                                         <color key="textColor" red="1" green="1" blue="1" alpha="0.87" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Mk-G7-NBz" customClass="AdvancedButton" customModule="devlopes_social" customModuleProvider="target">
                                         <color key="backgroundColor" red="0.8666666666666667" green="0.17254901960784313" blue="0.0" alpha="0.87" colorSpace="calibratedRGB"/>
@@ -83,6 +86,9 @@
                                         <state key="normal" title="Sign In">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="signInButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Q85-Wb-kpB"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -106,6 +112,10 @@
                             <constraint firstAttribute="trailing" secondItem="gCQ-Qv-HTS" secondAttribute="trailing" id="yRL-Hn-EXD"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="dK2-kH-QOV" id="XXN-vd-Ym0"/>
+                        <outlet property="passwordField" destination="HGv-7m-14s" id="kNE-QI-rd3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
