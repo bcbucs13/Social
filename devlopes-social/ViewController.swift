@@ -10,17 +10,25 @@ import UIKit
 import FBSDKCoreKit
 import FBSDKLoginKit
 import Firebase
+import SwiftKeychainWrapper
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+  
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID) {
+            performSegue(withIdentifier: "segueToFeedViewController", sender: self)
+        }
     }
 
     @IBAction func facebookButtonTapped(_ sender: AnyObject) {
@@ -49,12 +57,14 @@ class ViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("Brad: Email Sign in Success")
+                    self.completeSignIn(id: user!.uid)
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             print("Error creating user \(error)")
                         } else {
                             print("Brad: User successfully created with email on Firebase")
+                            self.completeSignIn(id: user!.uid)
                         }
                     })
                 }
@@ -69,9 +79,20 @@ class ViewController: UIViewController {
                 print("Brad Unable to authenticate error = \(error)")
             } else {
                 print("Brad Successfully authenticated with Firebase")
+                KeychainWrapper.standard.set(user!.uid, forKey: KEY_UID)
             }
         })
     }
+    
+    
+    func completeSignIn(id: String) {
+        KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        performSegue(withIdentifier: "segueToFeedViewController", sender: self)
+    }
+    
+    
+    
+    
 
 }
 

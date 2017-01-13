@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE4231511E2868450097F178 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4231501E2868440097F178 /* FeedViewController.swift */; };
 		CED46E681E1C9519007315E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED46E671E1C9519007315E3 /* AppDelegate.swift */; };
 		CED46E6A1E1C9519007315E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED46E691E1C9519007315E3 /* ViewController.swift */; };
 		CED46E6D1E1C9519007315E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED46E6B1E1C9519007315E3 /* Main.storyboard */; };
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		1A6DF3DE5B3B85460C266091 /* Pods-devlopes-social.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlopes-social.release.xcconfig"; path = "Pods/Target Support Files/Pods-devlopes-social/Pods-devlopes-social.release.xcconfig"; sourceTree = "<group>"; };
 		C0F555731C4055AF81BAA4C8 /* Pods-devlopes-social.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-devlopes-social.debug.xcconfig"; path = "Pods/Target Support Files/Pods-devlopes-social/Pods-devlopes-social.debug.xcconfig"; sourceTree = "<group>"; };
+		CE4231501E2868440097F178 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		CED46E641E1C9519007315E3 /* devlopes-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devlopes-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED46E671E1C9519007315E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED46E691E1C9519007315E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			isa = PBXGroup;
 			children = (
 				CED46E691E1C9519007315E3 /* ViewController.swift */,
+				CE4231501E2868440097F178 /* FeedViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CED46E871E22B430007315E3 /* RoundButton.swift in Sources */,
+				CE4231511E2868450097F178 /* FeedViewController.swift in Sources */,
 				CED46E8B1E22BB70007315E3 /* AdvancedButton.swift in Sources */,
 				CED46E851E22B2BD007315E3 /* Constants.swift in Sources */,
 				CED46E6A1E1C9519007315E3 /* ViewController.swift in Sources */,
