@@ -57,14 +57,22 @@ class ViewController: UIViewController {
             FIRAuth.auth()?.signIn(withEmail: email, password: pwd, completion: { (user, error) in
                 if error == nil {
                     print("Brad: Email Sign in Success")
-                    self.completeSignIn(id: user!.uid)
+                    if let user = user {
+                        let userData = ["provider": user.providerID]
+                        self.completeSignIn(id: user.uid, userData:userData)
+                    }
+                    
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
                         if error != nil {
                             print("Error creating user \(error)")
                         } else {
                             print("Brad: User successfully created with email on Firebase")
-                            self.completeSignIn(id: user!.uid)
+                            if let user = user {
+                                let userData = ["provider": user.providerID]
+                                self.completeSignIn(id: user.uid, userData:userData)
+                            }
+                            
                         }
                     })
                 }
@@ -80,12 +88,18 @@ class ViewController: UIViewController {
             } else {
                 print("Brad Successfully authenticated with Firebase")
                 KeychainWrapper.standard.set(user!.uid, forKey: KEY_UID)
+                if let user = user {
+                    let userData = ["provider": credential.provider]
+                    self.completeSignIn(id: user.uid, userData:userData)
+                }
+
             }
         })
     }
     
     
-    func completeSignIn(id: String) {
+    func completeSignIn(id: String, userData: Dictionary<String, String>) {
+        DataService.ds.createFirebaseDBUser(uid: id, userData: userData)
         KeychainWrapper.standard.set(id, forKey: KEY_UID)
         performSegue(withIdentifier: "segueToFeedViewController", sender: self)
     }

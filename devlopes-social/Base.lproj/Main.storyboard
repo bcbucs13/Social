@@ -136,11 +136,15 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJh-rd-xR9" customClass="AdvancedView" customModule="devlopes_social" customModuleProvider="target">
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="TTj-oB-xGY">
+                                    <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sign-out" translatesAutoresizingMaskIntoConstraints="NO" id="TTj-oB-xGY">
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="45" id="4TH-3d-Bq1"/>
                                             <constraint firstAttribute="height" constant="38" id="IPY-S2-4WE"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="jDM-21-DgS" appends="YES" id="nnh-9f-uVU"/>
+                                        </connections>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feed" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HFZ-Jo-5uw">
                                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
@@ -193,14 +197,14 @@
                                     <constraint firstAttribute="height" constant="65" id="sGg-Or-cUD"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="344" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rUK-z6-ooJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="344" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="rUK-z6-ooJ">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="344" id="QIH-zb-WRG">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="344" id="QIH-zb-WRG" customClass="PostCell" customModule="devlopes_social" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="344"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QIH-zb-WRG" id="Tvm-uU-RHQ">
-                                            <frame key="frameInset" width="375" height="343"/>
+                                            <frame key="frameInset" width="375" height="344"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k0w-xp-SHn" customClass="AdvancedView" customModule="devlopes_social" customModuleProvider="target">
@@ -220,7 +224,7 @@
                                                                             <color key="textColor" red="1" green="0.34509803919999998" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-C0-RE3" customClass="AdvancedImageView" customModule="devlopes_social" customModuleProvider="target">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="empty-heart" translatesAutoresizingMaskIntoConstraints="NO" id="ixa-C0-RE3" customClass="AdvancedImageView" customModule="devlopes_social" customModuleProvider="target">
                                                                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="height" constant="64" id="AV7-Qj-O11"/>
@@ -232,6 +236,9 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="aM8-zx-oCf"/>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uRf-iY-afA">
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="NSW-Fz-gIG"/>
+                                                                    </constraints>
                                                                     <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -259,7 +266,7 @@
                                                             </constraints>
                                                         </stackView>
                                                     </subviews>
-                                                    <color key="backgroundColor" red="0.81176470588235294" green="0.84705882352941175" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Pxc-cW-LdF" firstAttribute="leading" secondItem="k0w-xp-SHn" secondAttribute="leading" constant="264" id="0wm-9T-3iX"/>
                                                         <constraint firstItem="SZb-Ra-gU4" firstAttribute="leading" secondItem="k0w-xp-SHn" secondAttribute="leading" constant="8" id="9bg-kO-aND"/>
@@ -278,6 +285,13 @@
                                                 <constraint firstItem="k0w-xp-SHn" firstAttribute="top" secondItem="Tvm-uU-RHQ" secondAttribute="topMargin" constant="8" id="nU4-iZ-i4P"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionTextView" destination="uRf-iY-afA" id="ji8-F1-APs"/>
+                                            <outlet property="likesLabel" destination="BpX-jz-z79" id="qNM-Oj-Esl"/>
+                                            <outlet property="postImage" destination="aM8-zx-oCf" id="T3x-hG-ht6"/>
+                                            <outlet property="profileImage" destination="aEM-UV-0As" id="wT4-Xn-g1n"/>
+                                            <outlet property="usernameLabel" destination="5q3-2a-XYJ" id="hoP-lX-zvg"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -296,8 +310,17 @@
                             <constraint firstItem="rUK-z6-ooJ" firstAttribute="top" secondItem="1vQ-Kr-Vrp" secondAttribute="bottom" constant="16" id="wbg-Tg-GuQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="rUK-z6-ooJ" id="BSC-qw-e7h"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="segueToSignIn" id="Mkl-1Q-L9V"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYj-9K-Yqc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="jDM-21-DgS">
+                    <connections>
+                        <action selector="signOutPressed:" destination="vTv-xc-UCf" id="yRH-Yd-zza"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="744.79999999999995" y="85.907046476761622"/>
         </scene>
