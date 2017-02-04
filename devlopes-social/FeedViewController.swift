@@ -17,6 +17,10 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
+        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+            print("Snapshot value = \(snapshot.value)")
+        }
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -38,7 +42,8 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     @IBAction func signOutPressed(_ sender: UITapGestureRecognizer) {
-        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KeychainWrapper.standard.string(forKey: KEY_UID)!)
+        let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
+        //(forKey: KeychainWrapper.standard.string(forKey: KEY_UID)!)
         print("BRAD: ID removed from keychian \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "segueToSignIn", sender: self)
