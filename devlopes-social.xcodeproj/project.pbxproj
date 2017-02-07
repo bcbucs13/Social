@@ -11,6 +11,7 @@
 		CE4231531E31CD180097F178 /* AdvancedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4231521E31CD180097F178 /* AdvancedImageView.swift */; };
 		CE4231551E3712130097F178 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4231541E3712130097F178 /* PostCell.swift */; };
 		CE4231581E40194F0097F178 /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4231571E40194E0097F178 /* DataService.swift */; };
+		CE42315A1E495F3E0097F178 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4231591E495F3E0097F178 /* Post.swift */; };
 		CED46E681E1C9519007315E3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED46E671E1C9519007315E3 /* AppDelegate.swift */; };
 		CED46E6A1E1C9519007315E3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED46E691E1C9519007315E3 /* ViewController.swift */; };
 		CED46E6D1E1C9519007315E3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CED46E6B1E1C9519007315E3 /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		CE4231521E31CD180097F178 /* AdvancedImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdvancedImageView.swift; sourceTree = "<group>"; };
 		CE4231541E3712130097F178 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 		CE4231571E40194E0097F178 /* DataService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
+		CE4231591E495F3E0097F178 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		CED46E641E1C9519007315E3 /* devlopes-social.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "devlopes-social.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CED46E671E1C9519007315E3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CED46E691E1C9519007315E3 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				CED46E671E1C9519007315E3 /* AppDelegate.swift */,
+				CE4231591E495F3E0097F178 /* Post.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 				CE4231511E2868450097F178 /* FeedViewController.swift in Sources */,
 				CED46E8B1E22BB70007315E3 /* AdvancedButton.swift in Sources */,
 				CE4231581E40194F0097F178 /* DataService.swift in Sources */,
+				CE42315A1E495F3E0097F178 /* Post.swift in Sources */,
 				CED46E851E22B2BD007315E3 /* Constants.swift in Sources */,
 				CED46E6A1E1C9519007315E3 /* ViewController.swift in Sources */,
 				CED46E701E1C951A007315E3 /* devlopes_social.xcdatamodeld in Sources */,

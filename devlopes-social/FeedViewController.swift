@@ -11,15 +11,30 @@ import Firebase
 import SwiftKeychainWrapper
 
 class FeedViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
+    
+    
+    var posts = [Post]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.delegate = self
         tableView.dataSource = self
         // Do any additional setup after loading the view.
-        DataService.ds.REF_POSTS.observe(.value) { (snapshot) in
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
             print("Snapshot value = \(snapshot.value)")
-        }
+            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+                for snap in snapshot {
+                    print("Snap = \(snap)")
+                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+                        let key = snap.key
+                        let post = Post(postKey: key, postData: postDict)
+                        self.posts.append(post)
+                        
+                    }
+                }
+            }
+            self.tableView.reloadData()
+        })
         
     }
 
@@ -34,10 +49,12 @@ class FeedViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return posts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let post = posts[indexPath.row]
+        print("post = \(post)")
         return tableView.dequeueReusableCell(withIdentifier: "PostCell")!
     }
     
